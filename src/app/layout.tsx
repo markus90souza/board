@@ -1,6 +1,10 @@
+/** biome-ignore-all assist/source/organizeImports: <explanation> */
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import type { ReactNode } from 'react'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -10,10 +14,11 @@ export const metadata: Metadata = {
 type RootLayoutProps = {
   children: ReactNode
 }
+
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <html lang="pt-BR">
-      <body>{children}</body>
+    <html lang="pt-BR" className={inter.className} suppressHydrationWarning>
+      <body className="bg-navy-950 text-navy-50 antialiased">{children}</body>
     </html>
   )
 }
