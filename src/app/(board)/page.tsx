@@ -3,8 +3,18 @@ import { Card } from '@/components/card'
 
 import { MessageCircleIcon, ArchiveIcon, ThumbsUpIcon } from 'lucide-react'
 import { Button } from '@/components/button'
+import type { Metadata } from 'next'
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Board",
+}
+
+interface BoardPageProps {
+  searchParams: Promise<{ q?: string }>
+}
+const BoardPage = async ({ searchParams }: BoardPageProps) => {
+  const { q: search } = await searchParams
+  console.log('Search query:', search)
   return (
     <main className="grid grid-cols-4 gap-5 flex-1 items-stretch">
       <Section.Container>
@@ -41,3 +51,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default BoardPage
