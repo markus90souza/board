@@ -9,10 +9,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Product Roadmap",
-    default: "Product Roadmap",
+    template: '%s | Product Roadmap',
+    default: 'Product Roadmap',
   },
-  description: "Follow the development progress of our entire platform.",
+  description: 'Follow the development progress of our entire platform.',
 }
 
 type RootLayoutProps = {
