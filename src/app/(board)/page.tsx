@@ -4,6 +4,7 @@ import { Card } from '@/components/card'
 import { MessageCircleIcon, ArchiveIcon, ThumbsUpIcon } from 'lucide-react'
 import { Button } from '@/components/button'
 import type { Metadata } from 'next'
+import { connection } from 'next/server'
 import { listIssues } from '@/http/list-issues'
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ interface BoardPageProps {
   searchParams: Promise<{ q?: string }>
 }
 const BoardPage = async ({ searchParams }: BoardPageProps) => {
+  await connection()
   const { q: search } = await searchParams
   const issues = await listIssues({ search })
   return (
