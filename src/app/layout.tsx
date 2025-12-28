@@ -5,7 +5,7 @@ import type { ReactNode } from 'react'
 import { Inter } from 'next/font/google'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { ReactQueryProvider } from '@/providers/react-query-provider'
-export const dynamic = 'force-dynamic'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
