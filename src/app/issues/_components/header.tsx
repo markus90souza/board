@@ -1,4 +1,3 @@
-
 import { UserButton } from '@/components/user-button'
 export function Header() {
   return (

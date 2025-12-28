@@ -5,7 +5,10 @@ import { debounce, parseAsString, useQueryState } from 'nuqs'
 import { Input } from '@/components/input'
 
 const SearchInput = () => {
-  const [search, setSearch] = useQueryState('q', parseAsString.withDefault('').withOptions({ shallow: false }))
+  const [search, setSearch] = useQueryState(
+    'q',
+    parseAsString.withDefault('').withOptions({ shallow: false }),
+  )
 
   const handleSearchUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value, {

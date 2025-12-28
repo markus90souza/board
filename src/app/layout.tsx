@@ -4,6 +4,7 @@ import '@/styles/globals.css'
 import type { ReactNode } from 'react'
 import { Inter } from 'next/font/google'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
+import { ReactQueryProvider } from '@/providers/react-query-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +24,11 @@ const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="pt-BR" className={inter.className} suppressHydrationWarning>
       <body className="bg-navy-950 text-navy-50 antialiased">
-        <NuqsAdapter>{children}</NuqsAdapter>
+        <ReactQueryProvider>
+          <NuqsAdapter>
+            {children}
+          </NuqsAdapter>
+        </ReactQueryProvider>
       </body>
     </html>
   )

@@ -1,12 +1,17 @@
-import { Button } from "@/components/button"
-import { getIssue } from "@/http/get-issue"
-import { MoveLeftIcon, ArchiveIcon, ThumbsUpIcon, MessageCirclePlusIcon } from "lucide-react"
-import type { Metadata } from "next"
-import Link from "next/link"
-import { IssueCommentsList } from "./_components/issue-comments-list"
-import { IssueCommentsListSkeleton } from "./_components/issue-comments-list-skeleton"
-import { Suspense } from "react"
-import { Input } from "@/components/input"
+import { Button } from '@/components/button'
+import { getIssue } from '@/http/get-issue'
+import {
+  MoveLeftIcon,
+  ArchiveIcon,
+  ThumbsUpIcon,
+  MessageCirclePlusIcon,
+} from 'lucide-react'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { IssueCommentsList } from './_components/issue-comments-list'
+import { IssueCommentsListSkeleton } from './_components/issue-comments-list-skeleton'
+import { Suspense } from 'react'
+import { Input } from '@/components/input'
 
 interface IssuePageProps {
   params: Promise<{ id: string }>
@@ -25,10 +30,10 @@ export const generateMetadata = async ({
 }
 
 const statusLabels = {
-  backlog: "Backlog",
-  todo: "To Do",
-  in_progress: "In Progress",
-  done: "Done",
+  backlog: 'Backlog',
+  todo: 'To Do',
+  in_progress: 'In Progress',
+  done: 'Done',
 } as const
 
 export default async function IssuePage({ params }: IssuePageProps) {
@@ -68,7 +73,6 @@ export default async function IssuePage({ params }: IssuePageProps) {
       <div className="flex flex-col gap-2">
         <span className="font-semibold">Comments</span>
 
-        
         <form className="relative w-full">
           <Input
             className="bg-navy-700 h-11 pr-24 w-full"
@@ -85,8 +89,7 @@ export default async function IssuePage({ params }: IssuePageProps) {
 
         <div className="mt-3">
           <Suspense fallback={<IssueCommentsListSkeleton />}>
-
-          <IssueCommentsList issueId={issue.id} />
+            <IssueCommentsList issueId={issue.id} />
           </Suspense>
         </div>
       </div>

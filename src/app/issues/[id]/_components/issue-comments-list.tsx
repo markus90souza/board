@@ -1,7 +1,6 @@
-
-import { formatDistanceToNow } from "date-fns"
-import { Comment } from "@/components/comment"
-import { listIssueComments } from "@/http/list-issues-comments"
+import { formatDistanceToNow } from 'date-fns'
+import { Comment } from '@/components/comment'
+import { listIssueComments } from '@/http/list-issues-comments'
 
 interface IssueCommentsListProps {
   issueId: string
@@ -37,4 +36,5 @@ export async function IssueCommentsList({ issueId }: IssueCommentsListProps) {
         )
       })}
     </div>
-  )}
+  )
+}

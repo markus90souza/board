@@ -1,5 +1,5 @@
-import { CommentsListResponseSchema } from "@/api/routes/list-issue-comments"
-import { clientEnv } from "@/env"
+import { CommentsListResponseSchema } from '@/api/routes/list-issue-comments'
+import { clientEnv } from '@/env'
 
 interface ListIssueCommentsParams {
   issueId: string

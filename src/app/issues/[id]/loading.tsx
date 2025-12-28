@@ -1,6 +1,6 @@
-import { Skeleton } from "@/components/skeleton"
-import { MoveLeftIcon } from "lucide-react"
-import Link from "next/link"
+import { Skeleton } from '@/components/skeleton'
+import { MoveLeftIcon } from 'lucide-react'
+import Link from 'next/link'
 
 export default function IssueLoading() {
   return (
