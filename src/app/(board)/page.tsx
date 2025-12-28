@@ -17,20 +17,15 @@ const BoardPage = async ({ searchParams }: BoardPageProps) => {
   const { q: search } = await searchParams
   const issues = await listIssues({ search })
   return (
-    <main className="grid grid-cols-4 gap-5 flex-1 items-stretch">
+    <main className="grid grid-cols-1 md:grid-cols-4 gap-5 flex-1">
       <Section.Container>
-        {/* Header */}
         <Section.Header>
           <Section.Title>
             <ArchiveIcon className="size-3" />
             Backlog
           </Section.Title>
-
-          {/* Content */}
           <Section.IssueCount>{issues.backlog.length}</Section.IssueCount>
         </Section.Header>
-
-        {/* Content */}
         <Section.Content>
           {issues.backlog.length === 0 ? (
             <div className="flex items-center justify-center py-8 text-center">
@@ -40,7 +35,7 @@ const BoardPage = async ({ searchParams }: BoardPageProps) => {
             </div>
           ) : (
             issues.backlog.map((issue) => (
-              <Card.Container key={issue.id}>
+              <Card.Container href={`/issues/${issue.id}`} key={issue.id}>
                 <Card.Header>
                   <Card.Number>ISS-{issue.issueNumber}</Card.Number>
                   <Card.Title>{issue.title}</Card.Title>
@@ -82,7 +77,7 @@ const BoardPage = async ({ searchParams }: BoardPageProps) => {
             </div>
           ) : (
             issues.todo.map((issue) => (
-              <Card.Container key={issue.id}>
+              <Card.Container href={`/issues/${issue.id}`} key={issue.id}>
                 <Card.Header>
                   <Card.Number>ISS-{issue.issueNumber}</Card.Number>
                   <Card.Title>{issue.title}</Card.Title>
@@ -124,7 +119,7 @@ const BoardPage = async ({ searchParams }: BoardPageProps) => {
             </div>
           ) : (
             issues.in_progress.map((issue) => (
-              <Card.Container key={issue.id}>
+              <Card.Container href={`/issues/${issue.id}`} key={issue.id}>
                 <Card.Header>
                   <Card.Number>ISS-{issue.issueNumber}</Card.Number>
                   <Card.Title>{issue.title}</Card.Title>
@@ -166,7 +161,7 @@ const BoardPage = async ({ searchParams }: BoardPageProps) => {
             </div>
           ) : (
             issues.done.map((issue) => (
-              <Card.Container key={issue.id}>
+              <Card.Container href={`/issues/${issue.id}`} key={issue.id}>
                 <Card.Header>
                   <Card.Number>ISS-{issue.issueNumber}</Card.Number>
                   <Card.Title>{issue.title}</Card.Title>
