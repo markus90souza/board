@@ -1,17 +1,13 @@
-import { Button } from '@/components/button'
 import { getIssue } from '@/http/get-issue'
-import {
-  MoveLeftIcon,
-  ArchiveIcon,
-  ThumbsUpIcon,
-  MessageCirclePlusIcon,
-} from 'lucide-react'
+import { MoveLeftIcon, ArchiveIcon, MessageCirclePlusIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { IssueCommentsList } from './_components/issue-comments-list'
 import { IssueCommentsListSkeleton } from './_components/issue-comments-list-skeleton'
 import { Suspense } from 'react'
 import { Input } from '@/components/input'
+import { IssueLikeButton } from './_components/issue-like-button'
+import { Skeleton } from '@/components/skeleton'
 
 interface IssuePageProps {
   params: Promise<{ id: string }>
@@ -56,11 +52,7 @@ export default async function IssuePage({ params }: IssuePageProps) {
           <ArchiveIcon className="size-3" />
           {statusLabels[issue.status]}
         </span>
-
-        <Button>
-          <ThumbsUpIcon className="size-3" />
-          <span className="text-sm">12</span>
-        </Button>
+        <IssueLikeButton issueId={issue.id} />
       </div>
 
       <div className="space-y-2">

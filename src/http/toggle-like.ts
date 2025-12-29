@@ -1,5 +1,5 @@
-import { LikeResponseSchema } from "@/api/routes/schemas/issue-likes"
-import { clientEnv } from "@/env"
+import { LikeResponseSchema } from '@/api/routes/schemas/issue-likes'
+import { clientEnv } from '@/env'
 
 interface ToggleLikeParams {
   issueId: string
@@ -11,7 +11,7 @@ export async function toggleLike({ issueId }: ToggleLikeParams) {
     clientEnv.NEXT_PUBLIC_API_URL,
   )
   const response = await fetch(url, {
-    method: "POST",
+    method: 'POST',
   })
   const data = await response.json()
 

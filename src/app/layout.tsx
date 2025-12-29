@@ -25,9 +25,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
     <html lang="pt-BR" className={inter.className} suppressHydrationWarning>
       <body className="bg-navy-950 text-navy-50 antialiased">
         <ReactQueryProvider>
-          <NuqsAdapter>
-            {children}
-          </NuqsAdapter>
+          <NuqsAdapter>{children}</NuqsAdapter>
         </ReactQueryProvider>
       </body>
     </html>
