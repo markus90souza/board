@@ -1,16 +1,18 @@
+/** biome-ignore-all lint/style/useImportType: <explanation> */
 'use client'
 
-import { Section } from '@/components/section'
-import { Card } from '@/components/card'
 
-import { MessageCircleIcon, ArchiveIcon } from 'lucide-react'
+// biome-ignore assist/source/organizeImports: <explanation>
 import { Button } from '@/components/button'
-import { z } from 'zod'
+import { MessageCircleIcon, ArchiveIcon } from 'lucide-react'
+import { Card } from '@/components/card'
+import { Section } from '@/components/section'
 import type { IssuesListResponseSchema } from '@/api/routes/list-issues'
 import { getIssueInteractions } from '@/http/get-issue-interactions'
 import { useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { LikeButton } from '@/components/like-button'
+import { z } from 'zod'
 
 interface BoardContentProps {
   issues: z.infer<typeof IssuesListResponseSchema>
