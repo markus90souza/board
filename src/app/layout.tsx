@@ -23,7 +23,7 @@ type RootLayoutProps = {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="pt-BR" className={inter.className} suppressHydrationWarning>
-      <body className="bg-navy-950 text-navy-50 antialiased">
+      <body className="bg-navy-950 text-navy-50 antialiased" suppressHydrationWarning>
         <ReactQueryProvider>
           <NuqsAdapter>{children}</NuqsAdapter>
         </ReactQueryProvider>
