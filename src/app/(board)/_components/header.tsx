@@ -12,7 +12,7 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-4">
-        <Suspense fallback={null}>
+        <Suspense>
           <SearchInput />
         </Suspense>
         <UserButton />

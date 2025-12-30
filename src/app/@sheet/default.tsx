@@ -1,3 +1,3 @@
-export default function Banana() {
+export default function IssueSheet() {
   return null
 }
