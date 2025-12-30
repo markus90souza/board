@@ -18,14 +18,18 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = {
   children: ReactNode
+  sheet: ReactNode
 }
 
-const RootLayout = ({ children }: RootLayoutProps) => {
+const RootLayout = ({ children, sheet }: RootLayoutProps) => {
   return (
     <html lang="pt-BR" className={inter.className} suppressHydrationWarning>
       <body className="bg-navy-950 text-navy-50 antialiased" suppressHydrationWarning>
         <ReactQueryProvider>
-          <NuqsAdapter>{children}</NuqsAdapter>
+          <NuqsAdapter>
+            {children}
+            {sheet}
+          </NuqsAdapter>
         </ReactQueryProvider>
       </body>
     </html>
